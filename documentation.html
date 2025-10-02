@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MY AI Documentation</title>
+    <link rel="stylesheet" href="documentation.css" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="doc-wrap">
+
+      <nav id="sidebar" class="sidebar expanded">
+        <button id="sidebarToggle" class="sidebar-toggle"
+          title="Show/Hide Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      <h3 class="mb-4 navLink sidebar-title" title="Gemini AI">
+        <i class="fa-brands fa-google fa-2x pe-3"></i><span class="sidebar-label">MY AI</span>
+      </h3>
+        <a href="/index.html" class="mb-4 navLink" id="addChat"
+          title="Add New Chat">
+          <i class="fa-solid fa-plus"></i><span class="sidebar-label">New
+            Chat</span>
+        </a>
+        <a href="/documentation.html" class="mb-4 navLink" id="docs"
+          title="Documentation">
+          <i class="fa-solid fa-book"></i><span
+            class="sidebar-label">Documentation</span>
+        </a>
+        <a href="#" class="mb-4 navLink" id="history" title="Check History">
+          <i class="fa-solid fa-clock-rotate-left"></i><span
+            class="sidebar-label">History</span>
+        </a>
+        <div class="theme-dropdown mt-auto mb-2">
+          <button class="navLink theme-btn" id="themeToggle"
+            title="Change Theme">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+            <span class="sidebar-label">Theme</span>
+          </button>
+          <div class="theme-options" id="themeOptions">
+            <button class="theme-option" data-theme="red"
+              style="background:#d32f2f" title="Red"></button>
+            <button class="theme-option" data-theme="blue"
+              style="background:#1976d2" title="Blue"></button>
+            <button class="theme-option" data-theme="green"
+              style="background:#388e3c" title="Green"></button>
+            <button class="theme-option" data-theme="white"
+              style="background:#fff; border:1px solid #ccc"
+              title="White"></button>
+            <button class="theme-option" data-theme="black"
+              style="background:#222" title="Black"></button>
+          </div>
+        </div>
+      </nav>
+
+      <header class="docHeader">
+        <h1>MY AI</h1>
+        <p class="subtitle">Created by The Great Man Concepts, powered by
+          Gemini</p>
+        <nav class="toc">
+          <a href="#overview">Overview</a>
+          <a href="#quick-start">Quick start</a>
+          <a href="#features">Features</a>
+          <a href="#use">How to use</a>
+          <a href="#examples">Examples</a>
+          <a href="#ui-guide">UI guide</a>
+          <a href="#installation">Installation</a>
+          <a href="#deploy">Deployment</a>
+          <a href="#api-key">API key setup</a>
+          <a href="#developer">Developer guide</a>
+          <a href="#troubleshoot">Troubleshooting</a>
+          <a href="#faq">FAQ</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#credits">Credits</a>
+          <a href="#license">License</a>
+        </nav>
+      </header>
+
+      <main class="docMain">
+
+        <section id="overview" class="section">
+          <h2>Overview</h2>
+          <p>MY AI is a lightweight chat interface. It accepts text prompts. It
+            sends prompts to Gemini. It shows responses in chronological order.
+            Each prompt and response appears in its own block. The app preserves
+            history in the page session. The Great Man Concepts built the app.
+            Gemini provides the language model.</p>
+          <p>Use the app to get answers, ideas, simple code samples, or
+            explanations. The interface is minimal. The behavior is predictable.
+            The files include an example UI, a CSS file for styling, and a small
+            JavaScript module for interaction.</p>
+        </section>
+
+        <section id="quick-start" class="section">
+          <h2>Quick start</h2>
+          <ol>
+            <li>Download the repository files to a folder on your machine.</li>
+            <li>Open documentation.html in a browser to read this manual
+              locally.</li>
+            <li>Open the AI app HTML file in a browser to use the app
+              interface.</li>
+            <li>Set your Gemini API key in the app script before first use.</li>
+            <li>Type a prompt into the input field and press Enter or click the
+              Ask button.</li>
+          </ol>
+          <p>Each new prompt creates a new conversation block. History stays
+            visible until the page reloads.</p>
+        </section>
+
+        <section id="features" class="section">
+          <h2>Features</h2>
+          <ul>
+            <li>Prompt input with Enter key handling.</li>
+            <li>Ask button for mouse users.</li>
+            <li>Loading spinner while the model responds.</li>
+            <li>Each exchange renders in its own block.</li>
+            <li>Local message history stored in a JavaScript array while the
+              page runs.</li>
+            <li>Simple layout that adapts to narrow screens.</li>
+            <li>Theme toggle placeholder for future theme work.</li>
+          </ul>
+        </section>
+
+        <section id="use" class="section">
+          <h2>How to use</h2>
+
+          <h3>Typing a prompt</h3>
+          <p>Click the input field at the bottom. Type your text. Press Enter or
+            click Ask AI. The app posts the prompt to Gemini. A spinner appears.
+            The spinner shows progress. When the response returns, a new
+            response block replaces the spinner. The app appends both prompt and
+            response to the chat container.</p>
+
+          <h3>Reading history</h3>
+          <p>Scroll the chat area to review older exchanges. Each entry shows
+            the user prompt first. The AI response follows. The order is top to
+            bottom by time. The latest exchange appears at the bottom.</p>
+
+          <h3>Clearing history</h3>
+          <p>Reload the page to clear the in-memory history. The example does
+            not persist history to disk or server. You can extend the code to
+            save history in local storage or a backend service. See the
+            developer section for suggestions.</p>
+        </section>
+
+        <section id="examples" class="section">
+          <h2>Examples</h2>
+
+          <h3>Example 1: Short question</h3>
+          <p>Prompt</p>
+          <pre
+            class="code-block">What is the time complexity of binary search?</pre>
+          <p>Expected response</p>
+          <pre
+            class="code-block">Binary search runs in O(log n) time for a sorted array. Each step halves the remaining search range.</pre>
+
+          <h3>Example 2: Simple code</h3>
+          <p>Prompt</p>
+          <pre
+            class="code-block">Write a short function that adds two numbers in JavaScript.</pre>
+          <p>Expected response</p>
+          <pre class="code-block">function add(a, b) {
+  return a + b;
+}</pre>
+
+          <h3>Example 3: Project idea</h3>
+          <p>Prompt</p>
+          <pre
+            class="code-block">Give three small web app ideas suitable for a student portfolio.</pre>
+          <p>Expected response</p>
+          <pre class="code-block">1. Todo app with local storage and filters
+2. Simple blog with markdown editor and preview
+3. Weather dashboard using a public API</pre>
+        </section>
+
+        <section id="ui-guide" class="section">
+          <h2>UI guide</h2>
+
+          <h3>Main layout</h3>
+          <p>The layout uses a left sidebar and a main content area. The main
+            area centers the chat view. Input sits at the bottom center. The
+            chat container grows vertically. Messages wrap to fit narrow
+            screens.</p>
+
+          <h3>Message blocks</h3>
+          <p>Each user message uses the user-msg style. Each AI reply uses the
+            ai-msg style. The design highlights user text on the right. The
+            response appears on the left. Both blocks share the same background
+            and color palette.</p>
+
+          <h3>Spinner state</h3>
+          <p>When the request is pending the response block shows a spinner
+            icon. The spinner switches to the response text once the model
+            returns content.</p>
+        </section>
+
+        <section id="installation" class="section">
+          <h2>Installation</h2>
+
+          <h3>Files included</h3>
+          <ul>
+            <li>documentation.html</li>
+            <li>documentation.css</li>
+            <li>documentation.js</li>
+            <li>index.html for the app example</li>
+            <li>style.css for the app layout</li>
+            <li>script.js for the app logic</li>
+          </ul>
+
+          <h3>Local setup</h3>
+          <ol>
+            <li>Place all files in a single folder.</li>
+            <li>Open index.html in a browser to use the app UI.</li>
+            <li>Open documentation.html to read this manual in the browser.</li>
+          </ol>
+
+          <h3>Node static server</h3>
+          <p>Install a simple static server to serve files on localhost. Use any
+            static server of choice. Example with a popular Node tool</p>
+          <pre class="code-block">npx serve .</pre>
+          <p>Open the printed URL in the browser to access the app on the
+            network.</p>
+        </section>
+
+        <section id="deploy" class="section">
+          <h2>Deployment</h2>
+
+          <h3>Static host</h3>
+          <p>Host the files on any static hosting service. Options include
+            GitHub Pages, Netlify, or Vercel. Upload the project folder.
+            Configure the host root to point to index.html.</p>
+
+          <h3>Security notes</h3>
+          <p>Do not expose your API key in public repositories. Use server side
+            proxy or environment variables in production. The example app places
+            the API key in a front end file for demonstration only. Replace the
+            example key before deploying.</p>
+        </section>
+
+        <section id="api-key" class="section">
+          <h2>API key setup</h2>
+
+          <h3>Obtain a key</h3>
+          <p>Get a Gemini API key from your provider account. Follow the
+            provider account workflow to create a project and generate a
+            key.</p>
+
+          <h3>Local test key</h3>
+          <p>For local testing add the key inside the script where indicated.
+            Use a placeholder name until you switch to a secure server
+            solution.</p>
+
+          <h3>Server side proxy</h3>
+          <p>For production host a small server that stores the key in an
+            environment variable. The front end posts prompts to your server.
+            The server attaches the key and calls Gemini. The server returns the
+            AI response to the front end. This protects the key from public
+            exposure.</p>
+        </section>
+
+        <section id="developer" class="section">
+          <h2>Developer guide</h2>
+
+          <h3>File map</h3>
+          <ul>
+            <li>index.html: app UI example</li>
+            <li>style.css: app UI styling</li>
+            <li>script.js: app logic and API calls</li>
+            <li>documentation.html: this file</li>
+            <li>documentation.css: styles for this manual</li>
+            <li>documentation.js: utility functions for this manual</li>
+          </ul>
+
+          <h3>Core logic</h3>
+          <p>The app script uses a messages array. Each push stores an object
+            with two keys, msg and response. The UI rendering code creates a
+            user block and an AI block per exchange. The AI block shows a
+            spinner while the fetch runs. When the fetch resolves the code
+            replaces the spinner with the returned text. The approach keeps old
+            entries intact. The history exists only in memory.</p>
+
+          <h3>Suggested improvements</h3>
+          <ul>
+            <li>Persist messages in local storage for longer history
+              retention.</li>
+            <li>Implement a backend proxy to hide the API key.</li>
+            <li>Add rate limiting on the server to avoid quota issues.</li>
+            <li>Allow message deletion and export to PDF.</li>
+            <li>Support multiple sessions with unique ids.</li>
+          </ul>
+
+          <h3>Key functions explained</h3>
+
+          <h4>getGeminiResponse</h4>
+          <p>This function reads the input value. It creates DOM nodes for the
+            user prompt and the AI response. It sends a POST to the Gemini
+            endpoint. It awaits the JSON result. It extracts the first candidate
+            text and pushes an object into messages. It replaces the response
+            placeholder with text.</p>
+
+          <h4>showLoading</h4>
+          <p>This helper injects a spinner into the response placeholder. It
+            improves perceived latency while the network request runs.</p>
+
+          <h3>Example code snippet</h3>
+          <pre class="code-block">// messages array
+let messages = []
+
+// push a pair
+messages.push({
+  msg: 'Hello',
+  response: 'Hi there'
+})</pre>
+        </section>
+
+        <section id="troubleshoot" class="section">
+          <h2>Troubleshooting</h2>
+
+          <h3>No response</h3>
+          <p>If no response appears check the browser console for errors.
+            Confirm the API key value. Confirm network connectivity. Confirm the
+            endpoint URL is correct. If the JSON parse fails inspect the raw
+            response in the network tab.</p>
+
+          <h3>Spinner never stops</h3>
+          <p>If the spinner remains the request likely timed out or failed.
+            Check the server status. Add a timeout wrapper in the script. Add
+            catch logic to set the response placeholder to an error message.</p>
+
+          <h3>Messages not saved</h3>
+          <p>History resets on reload. Use local storage to persist messages
+            across sessions. The developer section lists a sample approach.</p>
+
+          <h3>Cors errors</h3>
+          <p>If your browser reports CORS block host the proxy on the same
+            origin or enable CORS headers on the server. The safest approach is
+            a server side proxy.</p>
+        </section>
+
+        <section id="faq" class="section">
+          <h2>FAQ</h2>
+
+          <h3>Is the app free to run?</h3>
+          <p>The UI itself is free. Model usage may involve costs managed by the
+            model provider. Monitor your provider billing dashboard.</p>
+
+          <h3>Can I change the model?</h3>
+          <p>Yes. Edit the endpoint URL and any model parameters in the script.
+            Use the provider documentation for supported model names and request
+            options.</p>
+
+          <h3>Is this production ready?</h3>
+          <p>The example offers a base for prototypes. Do not expose your API
+            key in production. Add authentication, rate limits, and server side
+            handling for a production deployment.</p>
+
+          <h3>Where do I get help?</h3>
+          <p>Use the provider support channels for model issues. For app issues
+            review the console logs and the network requests first.</p>
+        </section>
+
+        <section id="roadmap" class="section">
+          <h2>Roadmap</h2>
+          <ol>
+            <li>Local storage persistence for chat history.</li>
+            <li>Session management with named chats.</li>
+            <li>Export conversation to PDF and JSON.</li>
+            <li>Light and dark themes with a saved preference.</li>
+            <li>Server side proxy for secure API calls.</li>
+            <li>Message editing and deletion.</li>
+            <li>Attachment support for images and files.</li>
+          </ol>
+        </section>
+
+        <section id="credits" class="section">
+          <h2>Credits</h2>
+          <p>MY AI was built by The Great Man Concepts. Gemini supplies the
+            language model and inference. UI icons use Font Awesome. Host the
+            site under your account to control access.</p>
+        </section>
+
+        <section id="license" class="section">
+          <h2>License</h2>
+          <p>This project uses an open example license. You may reuse the front
+            end code for prototypes and learning. If you publish a derived
+            project remove any exposed API keys and follow the provider license
+            for model usage.</p>
+          <p>Include copyright attribution to The Great Man Concepts in public
+            forks and forks that ship a product based on this code.</p>
+        </section>
+
+        <section id="appendix" class="section">
+          <h2>Appendix: code snippets and utilities</h2>
+
+          <h3>Persist messages to local storage</h3>
+          <pre class="code-block">function saveMessages() {
+  localStorage.setItem('myai_messages', JSON.stringify(messages))
+}
+
+function loadMessages() {
+  const raw = localStorage.getItem('myai_messages')
+  if (!raw) return []
+  try {
+    return JSON.parse(raw)
+  } catch (err) {
+    return []
+  }
+}</pre>
+
+          <h3>Server side proxy example outline</h3>
+          <pre class="code-block">// Express outline
+const express = require('express')
+const fetch = require('node-fetch')
+const app = express()
+
+app.use(express.json())
+
+app.post('/api/generate', async (req, res) => {
+  const key = process.env.GEMINI_KEY
+  const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/...', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${key}` },
+    body: JSON.stringify(req.body)
+  })
+  const data = await response.json()
+  res.json(data)
+})</pre>
+
+          <h3>Contact</h3>
+          <p>For questions about the design or the code contact The Great Man
+            Concepts through your preferred channel.</p>
+        </section>
+      </main>
+
+    </div>
+    <footer class="docFooter">
+      <p>© 2025 The Great Man Concepts. All rights reserved.</p>
+    </footer>
+
+    <script src="documentation.js"></script>
+  </body>
+</html>
