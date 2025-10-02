@@ -46,4 +46,4 @@ document.addEventListener('DOMContentLoaded', function() {
   // Load theme from localStorage
   const savedTheme = localStorage.getItem('theme') || 'red';
   setTheme(savedTheme);
-});
+  });
